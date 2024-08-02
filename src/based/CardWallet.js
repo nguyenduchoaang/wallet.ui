@@ -61,7 +61,7 @@ const CardWrapper = styled.div`
 
 const CardInner = styled.div`
   width: 90%;
-  height: 56vh;
+  height: 56dvh;
   top: 158px;
   left: 33px;
   gap: 0px;
