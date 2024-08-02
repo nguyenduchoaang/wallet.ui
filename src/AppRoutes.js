@@ -13,7 +13,7 @@ const AppRoutes = [
     ),
   },
   {
-    path: "/",
+    path: "/wallet",
     element: (
       <Suspense>
         <Wallet />

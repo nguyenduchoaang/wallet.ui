@@ -9,7 +9,9 @@ import {
   ActionCreateWallet,
 } from "./aw";
 import reducer, { initialState } from "../store/reducer";
-import SeedPhraseCard from "../../based/SeedPhareCard";
+import SeedPhraseCard from "../../based/SeedPhraseCard";
+import { Link } from "react-router-dom";
+import BaseWrapper from "../../based/BaseWrapper";
 
 export default function AddWallet() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -19,7 +21,7 @@ export default function AddWallet() {
   const repeatedSeedPhrase = Array.from({ length: 4 }, () => seedPhrase).flat();
 
   return (
-    <AddWalletWrapper className="add_wrapper" backgroundImg={backgroundImg}>
+    <BaseWrapper className="add_wrapper" backgroundImg={backgroundImg}>
       <AddWalletW>
         <div className="header_add_wallet">
           <h1>Add Wallet</h1>
@@ -74,15 +76,20 @@ export default function AddWallet() {
             </p>
           </div>
           <div className="confirm_action">
-            <div className="arrow_back">
+            <div
+              className="arrow_back"
+              onClick={() => {
+                setShowSeedPhrase(false);
+              }}
+            >
               <Arrow.LeftArrow width="17.5px" height="17.5px" />
             </div>
-            <div className="confirm_button">
+            <Link to="/wallet" className="confirm_button">
               <p>CREATE A WALLET</p>
-            </div>
+            </Link>
           </div>
         </ActionCreateWallet>
       </SeedPhraseWrapper>
-    </AddWalletWrapper>
+    </BaseWrapper>
   );
 }
