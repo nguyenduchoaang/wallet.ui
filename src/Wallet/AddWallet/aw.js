@@ -15,7 +15,7 @@ const slideFromRight = keyframes`
 `;
 
 const AddWalletWrapper = styled.div`
-  height: 100vh;
+  height: 100dvh;
   position: fixed;
   width: 100vw;
   background-image: url(${(props) => props.backgroundImg});
@@ -87,7 +87,8 @@ const CreateNewWalletWrapper = styled.div`
   }
 `;
 const SeedPhraseWrapper = styled.div`
-  height: 100vh;
+  height: 100dvh;
+
   position: absolute;
   width: 100vw;
   top: 0;

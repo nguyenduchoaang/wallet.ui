@@ -19,7 +19,8 @@ const BaseWrapper = ({ children, props }) => {
   );
 };
 const BaseWrapperWrapper = styled.div`
-  height: 100vh;
+  height: 100dvh;
+
   position: fixed;
   width: 100vw;
   background-image: url(${(props) => props.backgroundImg});
