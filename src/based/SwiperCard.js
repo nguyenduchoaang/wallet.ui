@@ -43,7 +43,10 @@ const SwiperCard = (props) => {
         dynamicBullets: true,
         el: ".swiper-pagination",
       }}
+      slidesPerView={1.2}
+      centeredSlides={true}
       loop={true}
+      initialSlide={1}
       modules={[Pagination]}
       className="mySwiper"
     >

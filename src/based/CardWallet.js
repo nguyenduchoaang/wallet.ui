@@ -60,8 +60,8 @@ const CardWrapper = styled.div`
 `;
 
 const CardInner = styled.div`
-  width: 85%;
-  height: 450px;
+  width: 90%;
+  height: 56vh;
   top: 158px;
   left: 33px;
   gap: 0px;
@@ -73,6 +73,7 @@ const CardInner = styled.div`
   flex-direction: column;
   justify-content: space-between;
   font-family: "Inter", sans-serif;
+  box-shadow: 0 26px 15px rgba(0, 0, 0, 0.2);
 
   .card_wallet_header {
     display: flex;

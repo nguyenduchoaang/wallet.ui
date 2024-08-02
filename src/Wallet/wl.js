@@ -37,10 +37,27 @@ const HeaderWallet = styled.div`
   }
 `;
 const BodyWallet = styled.div`
-  height: 60%;
+  height: 75%;
 `;
 const FooterWallet = styled.div`
   height: 20%;
+  display: flex;
+  padding: 0 37px;
+  justify-content: space-between;
+  align-items: center;
+  .button_mean {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span {
+      font-family: "Clear Sans" Medium;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 13px;
+      text-align: center;
+    }
+  }
 `;
 
 export { HeaderWallet, BodyWallet, FooterWallet };

@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import { HeaderWallet, BodyWallet, FooterWallet } from "./wl";
 import BaseWrapper from "../based/BaseWrapper";
-import { Setting } from "../based/ConfigSVG";
+import { Setting, Line, Arrow } from "../based/ConfigSVG";
 import SwiperCard from "../based/SwiperCard";
+import ButtonAction from "../based/ButtonAction";
 
 const CardArray = [
   {
@@ -28,10 +29,31 @@ const CardArray = [
   },
 ];
 
+const ConfigMenu = [
+  {
+    name: "History",
+    icon: <Line.LineUp width="24" height="24" />,
+  },
+  {
+    name: "Send",
+    icon: <Line.Send width="24" height="24" />,
+  },
+  {
+    name: "Receive",
+    icon: <Line.Receive width="24" height="24" />,
+  },
+];
+
 export default function Wallet() {
   return (
     <>
-      <BaseWrapper>
+      <BaseWrapper
+        props={{
+          display: "flex",
+          justify: "space-between",
+          flexDirection: "column",
+        }}
+      >
         <HeaderWallet>
           <div className="left_header">
             <h2>Wallet</h2>
@@ -41,10 +63,39 @@ export default function Wallet() {
             <Setting width="40" height="50" />
           </div>
         </HeaderWallet>
+
         <BodyWallet>
           <SwiperCard data={CardArray} />
         </BodyWallet>
-        <FooterWallet></FooterWallet>
+
+        <FooterWallet>
+          <ButtonAction
+            props={{
+              width: "56px",
+              height: "56px",
+              bg: "rgba(255, 255, 255, 0.34)",
+              radius: "16px",
+            }}
+          >
+            <Arrow.LeftArrow width="18" height="18" fill="#ffff" />
+          </ButtonAction>
+          {ConfigMenu.map((item, index) => (
+            <ButtonAction
+              key={index}
+              props={{
+                width: "56px",
+                height: "56px",
+                bg: "rgba(255, 255, 255, 0.34)",
+                radius: "16px",
+              }}
+            >
+              <div className="button_mean">
+                {item.icon}
+                <span>{item.name}</span>
+              </div>
+            </ButtonAction>
+          ))}
+        </FooterWallet>
       </BaseWrapper>
     </>
   );
