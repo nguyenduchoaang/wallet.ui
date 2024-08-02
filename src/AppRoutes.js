@@ -5,7 +5,7 @@ import Wallet from "./Wallet/Wallet";
 
 const AppRoutes = [
   {
-    path: "/add-wallet",
+    path: "/",
     element: (
       <Suspense>
         <AddWallet />

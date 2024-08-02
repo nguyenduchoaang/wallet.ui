@@ -4,7 +4,7 @@ import BaseWrapper from "../based/BaseWrapper";
 import { Setting, Line, Arrow } from "../based/ConfigSVG";
 import SwiperCard from "../based/SwiperCard";
 import ButtonAction from "../based/ButtonAction";
-
+import { Link } from "react-router-dom";
 const CardArray = [
   {
     name: "Christopher Victory",
@@ -77,7 +77,10 @@ export default function Wallet() {
               radius: "16px",
             }}
           >
-            <Arrow.LeftArrow width="18" height="18" fill="#ffff" />
+            <Link to="/">
+              {" "}
+              <Arrow.LeftArrow width="18" height="18" fill="#ffff" />
+            </Link>
           </ButtonAction>
           {ConfigMenu.map((item, index) => (
             <ButtonAction
