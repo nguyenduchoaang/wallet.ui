@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { Scan, Copy } from "../ConfigSVG";
 import ButtonAction from "../ButtonAction";
-
+import { useNotification } from "../Notify";
+import Constant from "../Constant";
+import { NOTIFY } from "../Constant";
 export const CardWallet = (props) => {
+  const showNotification = useNotification();
   const { name, address, balance, color } = props;
   return (
     <CardWrapper>
@@ -14,7 +17,13 @@ export const CardWallet = (props) => {
               <p>{name}</p>
             </div>
             <div className="name_right">
-              <Scan width="30" height="30" />
+              <Scan
+                onClick={() =>
+                  showNotification(Constant.COMMING_SOON, NOTIFY.INFO)
+                }
+                width="30"
+                height="30"
+              />
             </div>
           </div>
           <div className="info_address">
@@ -28,7 +37,13 @@ export const CardWallet = (props) => {
                   align: "center",
                 }}
               >
-                <Copy width="16" height="16" />
+                <Copy
+                  onClick={() =>
+                    showNotification(Constant.COMMING_SOON, NOTIFY.INFO)
+                  }
+                  width="16"
+                  height="16"
+                />
               </ButtonAction>
             </h4>
             <p>{address}</p>

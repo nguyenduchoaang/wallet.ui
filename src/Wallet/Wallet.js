@@ -7,7 +7,7 @@ import ButtonAction from "../based/ButtonAction";
 import { Link } from "react-router-dom";
 import { CardArray, ConfigMenu } from "../based/Data";
 import { useNotification } from "../based/Notify";
-import { NOTIFY } from "../based/Constant";
+import Constant, { NOTIFY } from "../based/Constant";
 
 export default function Wallet() {
   const showNotification = useNotification();
@@ -25,7 +25,10 @@ export default function Wallet() {
             <h2>Wallet</h2>
             <p>The wallet for your digital assets</p>
           </div>
-          <div className="right_header">
+          <div
+            className="right_header"
+            onClick={() => showNotification(Constant.COMMING_SOON, NOTIFY.INFO)}
+          >
             <Setting width="40" height="50" />
           </div>
         </HeaderWallet>
@@ -61,10 +64,7 @@ export default function Wallet() {
               <div
                 className="button_mean"
                 onClick={() =>
-                  showNotification(
-                    "Tính năng đang được phát triển",
-                    NOTIFY.INFO
-                  )
+                  showNotification(Constant.COMMING_SOON, NOTIFY.INFO)
                 }
               >
                 {item.icon}

@@ -11,6 +11,8 @@ import reducer, { initialState } from "../store/reducer";
 import SeedPhraseCard from "../../based/Card/SeedPhraseCard";
 import { Link } from "react-router-dom";
 import BaseWrapper from "../../based/BaseWrapper";
+import { useNotification } from "../../based/Notify";
+import Constant, { NOTIFY } from "../../based/Constant";
 
 export default function AddWallet() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -18,6 +20,7 @@ export default function AddWallet() {
   const [showSeedPhrase, setShowSeedPhrase] = useState(false);
   const seedPhrase = state.seedPhrase;
   const repeatedSeedPhrase = Array.from({ length: 4 }, () => seedPhrase).flat();
+  const notify = useNotification();
 
   return (
     <BaseWrapper className="add_wrapper" backgroundImg={backgroundImg}>
@@ -50,6 +53,12 @@ export default function AddWallet() {
           <SeedPhraseCard
             showSeedPhrase={showSeedPhrase}
             repeatedSeedPhrase={repeatedSeedPhrase}
+            handleCopy={() => {
+              notify(Constant.COMMING_SOON, NOTIFY.INFO);
+            }}
+            handleCapture={() => {
+              notify(Constant.COMMING_SOON, NOTIFY.INFO);
+            }}
           ></SeedPhraseCard>
         </div>
         <ActionCreateWallet>
@@ -83,7 +92,13 @@ export default function AddWallet() {
             >
               <Arrow.LeftArrow width="17.5px" height="17.5px" />
             </div>
-            <Link to="/wallet" className="confirm_button">
+            <Link
+              onClick={() => {
+                notify("New wallet created successfully.", NOTIFY.SUCCESS);
+              }}
+              to="/wallet"
+              className="confirm_button"
+            >
               <p>CREATE A WALLET</p>
             </Link>
           </div>

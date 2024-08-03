@@ -19,11 +19,15 @@ export default function SeedPhraseCard(props) {
           secure place.
         </p>
         <div className="action_seed_phrase">
-          <div className="icon copy_icon">
+          <div className="icon copy_icon" onClick={() => props.handleCopy()}>
             <Copy width="16px" height="16px" />
           </div>
           <div className="icon picture_icon">
-            <Picture width="20px" height="20px" />
+            <Picture
+              width="20px"
+              height="20px"
+              onClick={() => props.handleCapture()}
+            />
           </div>
         </div>
       </div>

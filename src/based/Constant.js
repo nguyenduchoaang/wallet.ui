@@ -1,3 +1,8 @@
+const Constant = {
+  COMMING_SOON: "The feature will be released soon",
+  CREATE_SUCCESS: "New wallet created successfully.",
+};
+
 const NOTIFY = {
   SUCCESS: "success",
   ERROR: "error",
@@ -6,3 +11,4 @@ const NOTIFY = {
 };
 
 export { NOTIFY };
+export default Constant;
