@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Copy, Picture } from "./ConfigSVG";
+import { Copy, Picture } from "../ConfigSVG";
 export default function SeedPhraseCard(props) {
   const { repeatedSeedPhrase } = props;
   return (

@@ -1,6 +1,8 @@
 /**
  *  @explain base wrapper for all pages
  *  @use styled-components for styling
+ *  @param {children}
+ *  @param {object} props
  */
 
 import styled from "styled-components";

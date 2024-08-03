@@ -1,3 +1,9 @@
+/**
+ * @explain base Button action for project
+ * @param {children}
+ * @param {object} props
+ */
+
 import styled from "styled-components";
 
 const ButtonAction = ({ children, props }) => {

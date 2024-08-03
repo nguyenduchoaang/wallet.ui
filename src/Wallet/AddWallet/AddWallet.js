@@ -3,13 +3,12 @@ import backgroundImg from "../../assets/background.jpg";
 import { Arrow, Tick } from "../../based/ConfigSVG";
 import {
   AddWalletW,
-  AddWalletWrapper,
   CreateNewWalletWrapper,
   SeedPhraseWrapper,
   ActionCreateWallet,
 } from "./aw";
 import reducer, { initialState } from "../store/reducer";
-import SeedPhraseCard from "../../based/SeedPhraseCard";
+import SeedPhraseCard from "../../based/Card/SeedPhraseCard";
 import { Link } from "react-router-dom";
 import BaseWrapper from "../../based/BaseWrapper";
 

@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { Scan, Copy } from "./ConfigSVG";
-import ButtonAction from "./ButtonAction";
+import { Scan, Copy } from "../ConfigSVG";
+import ButtonAction from "../ButtonAction";
 
 export const CardWallet = (props) => {
   const { name, address, balance, color } = props;
-  console.log(color.background);
   return (
     <CardWrapper>
       <CardInner bgColor={color.background}>
